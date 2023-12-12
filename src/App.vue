@@ -3,8 +3,7 @@
     <div class="drum-box">
       <div class="drum-keys">
         <div class="row row-col-3">
-          <button type="button" id="btn-q" class="btn btn-dark col mx-1" v-on:click="play('q')"
-            v-on:touchend="teste('q')">
+          <button type="button" id="btn-q" class="btn btn-dark col mx-1" v-on:click="play('q')">
             Q
             <audio id="q" v-if="drum">
               <source src="@/assets/Heater-1.mp3" type="audio/mpeg">
@@ -253,16 +252,18 @@ export default {
 .toggle-on {
   font-size: 6vh;
   cursor: pointer;
-  color: rgb(187, 187, 187);
+  color: rgb(141, 140, 140);
+  line-height: 8vh;
 }
 
 .toggle-on {
   transform: rotate(180deg);
+  margin-top: -2px;
 }
 
 .toggle:hover,
 .toggle-on:hover {
-  color: rgb(141, 140, 140);
+  color: rgb(187, 187, 187);
 
 }
 
@@ -283,6 +284,8 @@ export default {
   align-items: center;
   gap: 1vh;
   color: rgb(187, 187, 187);
+  font-weight: bolder;
+  height: 8vh;
 }
 
 .volume-container {
@@ -291,10 +294,12 @@ export default {
   gap: 1vw;
   color: rgb(187, 187, 187);
 }
-.instrument-icon{
+
+.instrument-icon {
   font-size: 4vh;
   margin: 0 1vw;
 }
+
 /********** Range Input Styles **********/
 /*Range Reset*/
 input[type="range"] {
@@ -350,5 +355,25 @@ input[type="range"]::-moz-range-thumb {
   background-color: rgb(78, 78, 78);
   height: 2rem;
   width: 1rem;
+}
+
+@media screen and (max-width:1000px) {
+  .window{
+    height: 100vh;
+  }
+  
+  .drum-box {
+    flex-direction: column-reverse;
+    width: 90vw;
+    height: 80vh;
+    padding: 2vh;
+    gap: 3vh;
+    
+  }
+
+  .drum-keys,
+  .drum-configs {
+    width: 100%;
+  }
 }
 </style>
